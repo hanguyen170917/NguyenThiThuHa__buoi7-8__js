@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bài tập JS buổi 7 - 8</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="card">
+            <div class="card-header">
+              <h1>Bài tập mảng</h1>
+            </div>
+            <div class="card-body">
+              <div class="form-group">
+                <label>Nhập số nguyên</label>
+                <input type="text" id="txtNumber" class="form-control" />
+              </div>
+              <button id="btnAddNum" class="btn btn-success">Thêm số</button>
+
+              <!-- 1. Tổng các số dương trong mảng. -->
+              <button id="btnTotal" class="btn btn-success btnHide">
+                Tính Tổng
+              </button>
+
+              <!-- 2. Đếm có bao nhiêu số dương trong mảng. -->
+              <button id="btnCount" class="btn btn-success btnHide">
+                Đếm số dương
+              </button>
+
+              <!-- 3. Tìm số nhỏ nhất trong mảng. -->
+              <button id="btnMin" class="btn btn-success btnHide">
+                Tìm số nhỏ nhất
+              </button>
+
+              <!-- 4. Tìm số dương nhỏ nhất trong mảng. -->
+              <button id="btnMinPositiveNumber" class="btn btn-success btnHide">
+                Tìm số dương nhỏ nhất
+              </button>
+
+              <!-- 5. Tìm số chẵn cuối cùng trong mảng. -->
+              <button id="btnEvenNumer" class="btn btn-success btnHide">
+                Tìm số chẵn cuối cùng
+              </button>
+
+              <!-- 7. Sắp xếp mảng theo thứ tự tăng dần. -->
+              <button id="btnAscending" class="btn btn-success btnHide">
+                Sắp xếp tăng dần
+              </button>
+
+              <!-- 8. Tìm số nguyên tố đầu tiên trong mảng. -->
+              <button id="btnPrimeNumber" class="btn btn-success btnHide">
+                Tìm số nguyên tố đầu tiên
+              </button>
+
+              <!-- 10. So sánh số lượng số dương và số lượng số âm xem số nào nhiều hơn. -->
+              <button id="btnCompare" class="btn btn-success btnHide">
+                So sánh
+              </button>
+
+              <!-- 6. Đổi chỗ 2 giá trị trong mảng theo vị trí. -->
+              <div class="form-group">
+                <label id="title_1" class="btnHide"
+                  >Nhập vị trí số thứ nhất</label
+                >
+                <input
+                  type="text"
+                  id="txtPosition_1"
+                  class="form-control btnHide"
+                />
+                <label id="title_2" class="btnHide"
+                  >Nhập vị trí số thứ hai</label
+                >
+                <input
+                  type="text"
+                  id="txtPosition_2"
+                  class="form-control btnHide"
+                />
+                <button
+                  id="btnChangePositionNumber"
+                  class="btn btn-success btnHide"
+                >
+                  Đổi chỗ 2 giá trị
+                </button>
+              </div>
+            </div>
+            <div class="card-footer">
+              <!-- Show mảng -->
+              <div id="footerPrintNum"></div>
+
+              <!-- Show tổng -->
+              <div id="footerTotal"></div>
+
+              <!-- Show tổng số dương -->
+              <div id="footerCount"></div>
+
+              <!-- Show số nhỏ nhất -->
+              <div id="footerMin"></div>
+
+              <!-- Show số dương nhỏ nhất -->
+              <div id="footerMinPositiveNumber"></div>
+
+              <!-- Show số chẵn cuối cùng -->
+              <div id="footerEvenNumber"></div>
+
+              <!-- Show mảng theo thứ tự tăng dần. -->
+              <div id="footerAscending"></div>
+
+              <!-- Show số nguyên tố đầu tiên trong mảng. -->
+              <div id="footerPrimeNumber"></div>
+
+              <!-- Show số lượng số dương và số lượng số âm. -->
+              <div id="footerCompare"></div>
+
+              <!-- Show lại mảng sau khi đổi chỗ 2 giá trị -->
+              <div id="footerChangePositionNumber"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9. Nhập thêm 1 mảng số thực, tìm xem trong mảng có bao nhiêu số nguyên? -->
+        <div class="col-lg-6">
+          <div class="card">
+            <div class="card-header">
+              <h1>Câu 9: Mảng số thực</h1>
+            </div>
+            <div class="card-body">
+              <div class="form-group">
+                <label>Nhập số</label>
+                <input type="text" id="txtCountInt" class="form-control" />
+              </div>
+              <button id="btnAddRealNum" class="btn btn-success">
+                Thêm số
+              </button>
+              <button
+                id="btnCountInt"
+                style="display: none"
+                class="btn btn-success"
+              >
+                Đếm số nguyên
+              </button>
+            </div>
+            <div class="card-footer">
+              <div id="footerRealNumberList"></div>
+              <div id="footerCountInt"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
